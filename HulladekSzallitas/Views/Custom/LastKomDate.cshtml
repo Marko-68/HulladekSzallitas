@@ -1,0 +1,22 @@
+﻿@model DateTime?
+
+@{
+    ViewData["Title"] = "Utolsó Kommunális Hulladék Szállítás Dátuma";
+}
+
+<div class="container mt-4">
+    <h2>Utolsó Kommunális Szállítás Dátuma</h2>
+
+    @if (Model != null)
+    {
+        <div class="alert alert-success" role="alert">
+            Az utolsó kommunális szállítás dátuma: <strong>@Model.Value.ToString("yyyy.MM.dd")</strong>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-warning" role="alert">
+            Nem voltak kommunális hulladék szállítások
+        </div>
+    }
+</div>

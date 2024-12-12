@@ -1,0 +1,36 @@
+﻿@model Hulladékszállítás.Models.Lakig
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Részletek</h1>
+
+<div>
+    <h4>Lakig</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.igeny)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.igeny)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Szolgaltatas)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Szolgaltatas.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.mennyiseg)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.mennyiseg)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" class="btn btn-light" asp-route-id="@Model?.Id">Módosítás</a> |
+    <a asp-action="Index">Vissza</a>
+</div>

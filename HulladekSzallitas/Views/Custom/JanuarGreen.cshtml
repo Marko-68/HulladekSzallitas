@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Zöldhulladék Januári Szállításai";
+}
+
+<div class="container mt-4">
+    <h2>Januári Zöldhulladék Szállítások</h2>
+
+    @if (Model != null)
+    {
+        <table class="table table-striped table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Dátum</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var date in Model)
+                {
+                    <tr>
+                        <td>@date.ToString("yyyy.MM.dd")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="alert alert-warning" role="alert">
+            Nincsenek januári zöldhulladék szállítások.
+        </div>
+    }
+</div>

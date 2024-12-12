@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Zöldhulladék Szállítások Száma";
+}
+
+<div class="container mt-4">
+    <h2>Zöldhulladék Szállítások Száma</h2>
+    @if (Model != null)
+    {
+        <div class="alert alert-success text-center" role="alert">
+            <p>
+                @Model
+                Zöldhulladék szállítás történt.
+            </p>
+        </div>
+    }
+    else{
+        <div class="alert alert-warning" role="alert">
+            Nem történtek zöldhulladék szállítások
+        </div>
+    }
+</div>

@@ -1,0 +1,36 @@
+﻿@model dynamic
+
+@{
+    ViewData["Title"] = "Legtöbb Hulladékot Tartalmazó Hónap";
+
+    var months = new[] { "Január", "Február", "Március", "Április", "Május", "Június",
+                         "Július", "Augusztus", "Szeptember", "Október", "November", "December" };
+}
+
+<div class="container mt-4">
+    <h2 class="text-center">Legtöbb Hulladékot Tartalmazó Hónap</h2>
+
+    @if (Model != null)
+    {
+        <table class="table table-bordered table-striped table-hover mt-4">
+            <thead class="thead-dark text-center">
+                <tr>
+                    <th>Hónap</th>
+                    <th>Összes Hulladék Mennyisége</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="text-center">
+                    <td>@months[Model.Month - 1]</td>
+                    <td>@Model.hulladeksum</td>
+                </tr>
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="alert alert-warning text-center" role="alert">
+            Nincs adat a hónapok hulladékszállításairól.
+        </div>
+    }
+</div>

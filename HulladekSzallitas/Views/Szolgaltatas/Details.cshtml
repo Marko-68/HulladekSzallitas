@@ -1,0 +1,30 @@
+﻿@model Hulladékszállítás.Models.Szolgaltatas
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Részletek</h1>
+
+<div>
+    <h4>Szolgaltatas</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.tipus)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tipus)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.jelentes)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.jelentes)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" class="btn btn-light" asp-route-id="@Model?.Id">Módosítás</a> |
+    <a asp-action="Index">Vissza</a>
+</div>

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<dynamic>
+
+@{
+    ViewData["Title"] = "Hulladéktípusok Havonkénti Statisztikája";
+
+    var months = new[] { "Január", "Február", "Március", "Április", "Május", "Június",
+                         "Július", "Augusztus", "Szeptember", "Október", "November", "December" };
+}
+
+<div class="container mt-4">
+    <h2>Hulladéktípusok Havonkénti Statisztikája</h2>
+
+    @if (Model.Any())
+    {
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Év</th>
+                    <th>Hónap</th>
+                    <th>Hulladéktípus</th>
+                    <th>Összesített Mennyiség</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var stat in Model)
+                {
+                    <tr>
+                        <td>@stat.Year</td>
+                        <td>@months[stat.Month - 1]</td>
+                        <td>@stat.WasteType</td>
+                        <td>@stat.Total</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="alert alert-warning" role="alert">
+            Nincs adat a havonkénti statisztikákra.
+        </div>
+    }
+</div>
